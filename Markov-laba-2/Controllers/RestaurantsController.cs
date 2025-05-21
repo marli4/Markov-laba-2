@@ -149,8 +149,7 @@ namespace Markov_laba_2.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost, ActionName("MakeAnOrder")]
-        [ValidateAntiForgeryToken]
+
         public async Task<IActionResult> MakeAnOrder(int? id)
         {
             var restaurant = await _context.Restaurant.FirstOrDefaultAsync(m => m.Id == id);
